@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOTER CREATIVE FES 2026 | 夢と音楽の祝祭</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a1730;
+    --navy-mid:#132a54;
+    --navy-panel:#0d1f42;
+    --gold:#d4af37;
+    --gold-line:rgba(212,175,55,0.55);
+    --gold-text:#ecdba8;
+    --gold-soft:#cbb87e;
+    --ink:#ecdba8;
+
+    --c-galaxy:#2b2f78;
+    --c-galaxy-2:#4b3f9c;
+    --c-magic:#1e4d33;
+    --c-magic-2:#2f6b45;
+    --c-starlight:#6a2a63;
+    --c-starlight-2:#9c3f8f;
+    --c-sunset:#c1531f;
+    --c-sunset-2:#e08a3c;
+    --c-guest:#122650;
+    --c-guest-2:#274a86;
+    --c-booth:#4a3320;
+    --c-booth-2:#7a5738;
+
+    --font-display:'Cormorant Garamond', serif;
+    --font-jp-serif:'Shippori Mincho', serif;
+    --font-jp-body:'Zen Kaku Gothic New', sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-jp-body);
+    color:var(--ink);
+    background:var(--navy-deep);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+
+  /* ---------- HEADER ---------- */
+  header.hero{
+    position:relative;
+    aspect-ratio:4000/1442;
+    min-height:550px;
+    width:100%;
+    background-image: url('image/main.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    color:#f4ecd8;
+    overflow:hidden;
+  }
+
+  @media (max-width:600px){
+    header.hero{
+      aspect-ratio:4/3;
+      min-height:0;
+      max-height:none;
+    }
+  }
+
+  .brand-mark{
+    position:absolute;
+    top:4%;
+    left:5vw;
+    z-index:3;
+    font-family:var(--font-jp-serif);
+    font-weight:700;
+    font-size:clamp(14px, 1.6vw, 16px);
+    letter-spacing:0.1em;
+    color:var(--gold-text);
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+  }
+
+  .hero-copy{
+    position:relative; z-index:2;
+    text-align:center;
+    padding:0 8vw;
+    margin-bottom:7%;
+  }
+  .hero-copy h1{
+    font-family:var(--font-jp-serif);
+    font-weight:600;
+    font-size:clamp(20px, 3.6vw, 36px);
+    letter-spacing:0.04em;
+    color:#f7f1de;
+    text-shadow:0 2px 4px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6);
+  }
+  .hero-copy p{
+    margin-top:12px;
+    font-size:clamp(14px, 1.5vw, 15px);
+    line-height:1.9;
+    color:#e6dfc8;
+    text-shadow:0 1px 3px rgba(0,0,0,0.9), 0 3px 14px rgba(0,0,0,0.8);
+  }
+
+  /* ---------- MAIN CARD ---------- */
+  main{
+    position:relative;
+    z-index:2;
+    max-width:1020px;
+    margin:0 auto;
+    background:var(--navy-deep);
+    padding:52px 6vw 20px;
+  }
+
+  .day-block{padding-bottom:44px;}
+  .day-block + .day-block{
+    border-top:1px solid var(--gold-line);
+    padding-top:44px;
+    position:relative;
+  }
+  .day-block + .day-block::before{
+    content:"✦";
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--navy-deep);
+    color:var(--gold);
+    padding:0 14px;
+    font-size:14px;
+  }
+
+  .day-eyebrow{
+    text-align:center;
+  }
+  .day-eyebrow .title-row{
+    line-height:1;
+  }
+  .day-eyebrow .day-word{
+    font-family:var(--font-jp-serif);
+    font-weight:700;
+    font-size:clamp(30px, 6.4vw, 52px);
+    letter-spacing:0.01em;
+    color:var(--gold-text);
+    vertical-align:baseline;
+    margin-right:4px;
+  }
+  .day-eyebrow .num{
+    font-family:var(--font-jp-serif);
+    font-style:normal;
+    font-weight:700;
+    font-size:clamp(30px, 6.4vw, 52px);
+    color:var(--gold-text);
+    letter-spacing:0.01em;
+    text-shadow:0 0 18px rgba(212,175,55,0.25);
+  }
+  .day-eyebrow .label{
+    font-family:var(--font-jp-serif);
+    font-weight:700;
+    font-size:clamp(30px, 6.4vw, 52px);
+    color:var(--gold-text);
+    margin-left:4px;
+  }
+  .day-eyebrow .release-badge{
+    display:inline-block;
+    margin-top:20px;
+    background:linear-gradient(135deg, var(--gold), #b8912a);
+    color:var(--navy-deep);
+    font-family:var(--font-jp-body);
+    font-weight:700;
+    font-size:clamp(19.5px, 3.4vw, 25.5px);
+    letter-spacing:0.03em;
+    padding:9px 26px;
+    border-radius:4px;
+    border:1px solid rgba(255,255,255,0.35);
+  }
+  .day-eyebrow .catch{
+    max-width:520px;
+    margin:22px auto 0;
+    font-size:14px;
+    line-height:1.8;
+    color:var(--gold-soft);
+    opacity:0.9;
+  }
+
+  /* ---------- BOX GRID (共通: PC/SP 2列) ---------- */
+  .box-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+    margin-top:46px;
+  }
+  .box-grid.cols-2-wide{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .stage-box{
+    position:relative;
+    border-radius:8px;
+    overflow:hidden;
+    display:block;
+    border:1.5px solid var(--gold-line);
+    box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 1px rgba(212,175,55,0.08) inset;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    background:var(--navy-panel);
+  }
+  a.stage-box:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.55), 0 0 0 1px rgba(212,175,55,0.15) inset;
+    border-color:var(--gold);
+  }
+
+  .stage-box .art{
+    aspect-ratio:4/3;
+    width:100%;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.18), transparent 55%),
+      linear-gradient(160deg, var(--c1), var(--c2));
+    position:relative;
+  }
+  .stage-box .art.no-image::after{
+    /* 画像未指定時のみ表示するプレースホルダー表記 */
+    content:"IMAGE";
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display);
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:rgba(255,255,255,0.35);
+  }
+  .stage-box .art{position:relative;}
+
+  .stage-box .bar{
+    display:flex; align-items:center; gap:10px;
+    padding:11px 14px;
+    background:linear-gradient(135deg, var(--c1), var(--c2));
+    color:#f8f1da;
+    border-top:1.5px solid var(--gold-line);
+  }
+  .stage-box .bar .icon{font-size:17px; line-height:1;}
+  .stage-box .bar .titles{flex:1; min-width:0;}
+  .stage-box .bar .en{
+    display:block;
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(16px, 3.6vw, 22.5px);
+    line-height:1.22;
+    white-space:normal;
+    overflow-wrap:break-word;
+  }
+  .stage-box .bar .jp{
+    display:block;
+    font-family:var(--font-jp-body);
+    font-weight:400;
+    font-size:14px;
+    opacity:0.85;
+    margin-top:4px;
+  }
+  .stage-box .bar .chev{
+    font-size:16px;
+    opacity:0.8;
+    flex-shrink:0;
+  }
+
+  /* ---------- ロック状態 ---------- */
+  .stage-box.locked{
+    pointer-events:none;
+    cursor:default;
+  }
+  .stage-box.locked .art{
+    filter:grayscale(0.85) brightness(0.55);
+  }
+  .stage-box.locked .bar{
+    background:#3a3a3a;
+    color:#cfcfcf;
+  }
+  .stage-box.locked .chev{display:none;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    padding:40px 6vw 46px;
+    color:#d8d3bf;
+  }
+  footer .fname{
+    font-family:var(--font-jp-serif);
+    font-weight:700;
+    font-size:15px;
+    letter-spacing:0.1em;
+    color:var(--gold-text);
+  }
+  footer .fsub{
+    margin-top:8px;
+    font-size:11px;
+    opacity:0.6;
+  }
+
+  /* ---------- レスポンシブ調整 ---------- */
+  @media (max-width:600px){
+    main{padding:40px 5vw 10px; margin-top:-28px;}
+    .box-grid{gap:12px;}
+    .stage-box .bar{padding:8px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- 文字は一旦画像側に入れるためコメントアウト（再度使う場合はここを外す）
+  <div class="brand-mark">noter Creative Fes 2026</div>
+
+  <div class="hero-copy">
+    <h1>ようこそ、夢と音楽の祝祭へ。</h1>
+    <p>それぞれ異なる世界観や音楽を詰め込んだステージと、<br>フェスならではの楽しみがあなたを待っています。</p>
+  </div>
+  -->
+</header>
+
+<main id="content"></main>
+
+<footer>
+  <div class="fname">NOTER CREATIVE FES 2026</div>
+  <div class="fsub">© 2026 Noter Creative Fes. All rights reserved.</div>
+</footer>
+
+<script>
+/* =========================================================
+   ★ 記事URLはここ(各boxのurl)に貼り付けるだけでOK ★
+   ・url: 対応するnote記事の実URLに差し替える（今は仮で "#"）
+   ・releaseDate: バッジ表示用の公開日。locked:true の場合はこの日時(JST)を過ぎるまでロック表示になる
+   ・locked: true にした日だけ公開日ベースでロック判定される。false なら常にフルカラー・リンク有効
+   ・image: "image/image_01.jpg" 〜 "image_06.jpg" を参照。
+            同じファイル名で本番画像を上書きすればコード変更不要。
+   ========================================================= */
+const DAYS = [
+  {
+    id: "day1",
+    numOnly: "1",
+    label: "メインステージ",
+    catch: "4つのメインステージがオープン！それぞれの世界をゆっくりお楽しみください。",
+    releaseDate: "2026-08-19T00:00:00+09:00",
+    locked: false,
+    boxes: [
+      { icon:"🌌", en:"Galaxy Tour Stage",   jp:"チイノ",  url:"https://note.com/preview/ndf8605846029?prev_access_key=2bbb5fad71bc62998cabce76e057cd52", image:"image/image_01.jpg", c1:"var(--c-galaxy)",    c2:"var(--c-galaxy-2)" },
+      { icon:"📖", en:"Magical Story Stage", jp:"おっぽ",  url:"#", image:"image/image_02.jpg", c1:"var(--c-magic)",     c2:"var(--c-magic-2)" }, // ← 共有用リンク未着なので仮のまま
+      { icon:"✨", en:"Starlight Pop Stage", jp:"けぶじん", url:"https://note.com/preview/n84e41e6be73c?prev_access_key=1a4eb82e36f7014e7cab63eb4c099c17", image:"image/image_03.jpg", c1:"var(--c-starlight)", c2:"var(--c-starlight-2)" },
+      { icon:"🌅", en:"Sunset Groove Stage", jp:"ちぃ",    url:"https://note.com/preview/n460a76d2d0b9?prev_access_key=3a4be860cef2f730dc1d6698c822f39d", image:"image/image_04.jpg", c1:"var(--c-sunset)",    c2:"var(--c-sunset-2)" }
+    ]
+  },
+  {
+    id: "day2",
+    numOnly: "2",
+    label: "ゲストステージ＆ブース",
+    catch: "特別ゲストステージとフェスを楽しむブースエリアがオープンします！",
+    releaseDate: "2026-08-20T00:00:00+09:00",
+    locked: false, // ← 一旦解除中（本番前に true に戻す）
+    boxes: [
+      { icon:"🎤", en:"Guest Spotlight Stage", jp:"特別ゲストステージ",         url:"https://note.com/preview/n047ba9f3ace6?prev_access_key=5650801fc9eebca0df3c7476cac0c6f0", image:"image/image_05.jpg", c1:"var(--c-guest)", c2:"var(--c-guest-2)" },
+      { icon:"🛍️", en:"フェスブースエリア",     jp:"フード・グッズ・フォトブース", url:"https://note.com/preview/n033e1c33ceb0?prev_access_key=4699cb53b135deaeb33f9e1b124cd8ba", image:"image/image_06.jpg", c1:"var(--c-booth)", c2:"var(--c-booth-2)" }
+    ]
+  }
+];
+
+function formatDate(iso){
+  const d = new Date(iso);
+  const w = ["日","月","火","水","木","金","土"][d.getDay()];
+  return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}（${w}）`;
+}
+
+function render(){
+  const now = new Date();
+  const main = document.getElementById("content");
+  main.innerHTML = "";
+
+  DAYS.forEach(day => {
+    const isLocked = day.locked && now < new Date(day.releaseDate);
+
+    const section = document.createElement("section");
+    section.className = "day-block";
+    section.id = day.id;
+
+    section.innerHTML = `
+      <div class="day-eyebrow">
+        <div class="title-row">
+          <span class="day-word">DAY</span><span class="num">${day.numOnly}</span><span class="label">｜${day.label}</span>
+        </div>
+        <div class="release-badge">公開日：${formatDate(day.releaseDate)}</div>
+        <p class="catch">${day.catch}</p>
+      </div>
+      <div class="box-grid ${day.boxes.length <= 2 ? 'cols-2-wide' : ''}"></div>
+    `;
+
+    const grid = section.querySelector(".box-grid");
+    day.boxes.forEach(box => {
+      const el = document.createElement(isLocked ? "div" : "a");
+      if(!isLocked){ el.href = box.url; el.target = "_blank"; el.rel = "noopener"; }
+      el.className = "stage-box" + (isLocked ? " locked" : "");
+      el.style.setProperty("--c1", box.c1);
+      el.style.setProperty("--c2", box.c2);
+      el.innerHTML = `
+        <div class="art ${box.image ? '' : 'no-image'}" ${box.image ? `style="background-image:url('${box.image}');background-size:cover;background-position:center;"` : ""}></div>
+        <div class="bar">
+          <!-- アイコンは折り返し軽減のため非表示中: <span class="icon">${box.icon}</span> -->
+          <span class="titles">
+            <span class="en">${box.en}</span>
+            <span class="jp">（${box.jp}）</span>
+          </span>
+          <span class="chev">›</span>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+
+    main.appendChild(section);
+  });
+}
+
+render();
+</script>
+
+</body>
+</html>
