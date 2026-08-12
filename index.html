@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NOTER CREATIVE FES 2026 | 夢と音楽の祝祭</title>
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOTER CREATIVE FES 2026 | 夢と音楽の祝祭">
+<meta property="og:description" content="それぞれ異なる世界観や音楽を詰め込んだステージと、フェスならではの楽しみがあなたを待っています。">
+<meta property="og:url" content="https://note-fes2026.vercel.app">
+<meta property="og:image" content="https://note-fes2026.vercel.app/image/ogp.jpg">
+<meta property="og:site_name" content="NOTER CREATIVE FES 2026">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOTER CREATIVE FES 2026 | 夢と音楽の祝祭">
+<meta name="twitter:description" content="それぞれ異なる世界観や音楽を詰め込んだステージと、フェスならではの楽しみがあなたを待っています。">
+<meta name="twitter:image" content="https://note-fes2026.vercel.app/image/ogp.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -117,6 +131,15 @@
   }
 
   .day-block{padding-bottom:44px;}
+
+  .link-notice{
+    text-align:center;
+    font-size:15px;
+    color:#ffffff;
+    opacity:0.9;
+    margin-top:28px;
+    margin-bottom:0;
+  }
   .day-block + .day-block{
     border-top:1px solid var(--gold-line);
     padding-top:44px;
@@ -189,7 +212,7 @@
     display:grid;
     grid-template-columns:repeat(2, 1fr);
     gap:18px;
-    margin-top:46px;
+    margin-top:14px;
   }
   .box-grid.cols-2-wide{
     grid-template-columns:repeat(2, 1fr);
@@ -390,6 +413,7 @@ function render(){
         <div class="release-badge">公開日：${formatDate(day.releaseDate)}</div>
         <p class="catch">${day.catch}</p>
       </div>
+      <p class="link-notice">※リンクは公開日に開通します。公開日以前は無効です。</p>
       <div class="box-grid ${day.boxes.length <= 2 ? 'cols-2-wide' : ''}"></div>
     `;
 
